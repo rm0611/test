@@ -1,0 +1,51 @@
+<!doctype Html>
+<html>
+<head>
+</head>
+<body onload="init()">
+  <h1>Calculate BMI</h1>
+  Weight (in kg) : <input id = "weight" />
+  <br>
+  Height (in m) : <input id = "height" />
+  <br>
+  Calculate : <button onclick="calc()">Calculate</button>
+  <p id="result"></p>
+  <br>
+  <br>
+  <p id = "info"></p>
+  <br>
+  <br>
+  <input id = "number">
+  <button onclick="checkEven()">Check!</button>
+  <p id = "numberresult"></p>
+  <script>
+    function calc() {
+      var w = document.getElementById('weight').value;
+      var h = document.getElementById('height').value;
+      var r = w / (h*h); //this calculates BMI
+      document.getElementById('result').textContent = "Your BMI is" + r + "!";
+    }
+      function init() {
+      var a = 3, b = 4, c = 5;
+      var x = (a == b);
+      var y = (a != b);
+      var z = (a < b);
+      var p = (a > b);
+      var q = (a <= b);
+      var m = (a >= b);
+      var str = "x=" + x + ", y=" + y + ",z=" + z;
+      document.getElementById("info").textContent = str;
+    }
+
+    function checkEven() {
+      var v = document.getElementById("number").value;
+      var r = document.getElementById("numberresult");
+      if (isNaN(v)) {
+        r.textContent = v + " is not a number";
+      } else {
+        r.textContent = v + " is a number";
+      }
+    }
+  </script>  
+</body>
+</html>
