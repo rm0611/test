@@ -43,7 +43,7 @@
       if (isNaN(v)) {
         r.textContent = v + " is not a number";
       } else {
-        r.textContent = v + " is a number";
+        r.textContent = (v % 2 ==0) ? " is an even number" : " is an odd number";
       }
     }
   </script>  
