@@ -18,6 +18,11 @@
   <input id = "number">
   <button onclick="checkEven()">Check!</button>
   <p id = "numberresult"></p>
+  <br>
+  <br>
+  <input id = "sumvalue">
+  <button onclick="checkSum()">add up the sum!</button>
+  <p id = "sumresult"></p>
   <script>
     function calc() {
       var w = document.getElementById('weight').value;
@@ -46,6 +51,17 @@
         r.textContent = (v % 2 ==0) ? " is an even number" : " is an odd number";
       }
     }
+
+    function checkSum() {
+      var vv = document.getElementById('sumvalue').value;
+      var reach = 0;
+      for (var i = 1; i<= vv; i++) {
+        reach += i;
+      }
+      var sum = "From 1 to " + vv + " the sum is " + reach;
+      document.getElementById('sumresult').textContent = sum;
+    }
+
   </script>  
 </body>
 </html>
