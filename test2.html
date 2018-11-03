@@ -1,0 +1,58 @@
+<!doctype Html>
+<html>
+<head>
+  <style type="text/css">
+    table {
+      border: none;
+    }
+    tr {
+      border: 1px solid gray;
+    }
+    td {
+      width: 50px;
+      height: 50px;
+      border: 1px solid gray;
+    }
+    .cell {
+      text-align: center;
+    }
+    .even {
+
+    }
+  </style>
+</head>
+
+<body>
+  <h1>super basic  0x game </h1>
+  <p>click anywhere on the table cells</p>
+  <table>
+    <tr>
+      <td class = "cell" onclick="clickMe(this)"></td>
+      <td class = "cell" onclick="clickMe(this)"></td>
+      <td class = "cell" onclick="clickMe(this)"></td>
+    </tr>
+    <tr>
+      <td class = "cell" onclick="clickMe(this)"></td>
+      <td class = "cell" onclick="clickMe(this)"></td>
+      <td class = "cell" onclick="clickMe(this)"></td>
+    </tr>
+    <tr>
+      <td class = "cell" onclick="clickMe(this)"></td>
+      <td class = "cell" onclick="clickMe(this)"></td>
+      <td class = "cell" onclick="clickMe(this)"></td>
+    </tr>
+  </table>
+
+  <script>
+    var count = 0;
+    function clickMe(e) {
+      if (count++ % 2 == 0 ) { //偶数
+        e.textContent = '○';
+      } else { //奇数
+        e.textContent = '×';
+      }
+    }
+
+  </script>  
+</body>
+</html>
