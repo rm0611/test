@@ -16,10 +16,21 @@
     .cell {
       text-align: center;
     }
+
+    div {
+      position: absolute;
+      width: 60px;
+      height: 25px;
+      color: green;
+      top: 50px;
+    }
+
   </style>
 </head>
 
-<body>
+<body onload = "init()">
+  <div id ="ufo"><(UFO)></div>
+  <!--
   <h1>super basic  0x game </h1>
   <p>click anywhere on the table cells</p>
   <table>
@@ -39,17 +50,45 @@
       <td class = "cell" onclick="clickMe(this)"></td>
     </tr>
   </table>
+  -->
 
   <script>
-    var count = 0;
+    /*var count = 0;
     function clickMe(e) {
-      if (count++ % 2 == 0 ) { //偶数
-        e.textContent = '○';
-      } else { //奇数
-        e.textContent = '×';
+      if (count++ % 2 == 0) {
+        e.textContent = 'o';
+      } else {
+        e.textContent = 'x';
       }
+    }*/
+    
+    var ufo;
+    function init() {
+      window.addEventListener('keydown', keydown);
+      ufo = new UFO(document.getElementById('ufo'), 100);
     }
 
+    function keydown(e) {
+      if (e.keyCode == 37) {
+        ufo.moveLeft();
+      } else if (e.keyCode == 39) {
+        ufo.moveRight();
+      }
+    }
+    
+    function UFO(_elem, _xpos) {
+      this.elem = _elem;
+      this.xpos = _xpos;
+      this.moveLeft = function () {
+        this.xpos -= 10;
+        this.elem.style.left = this.xpos + 'px' ;
+      }
+      this.moveRight = function () {
+        this.xpos += 10;
+        this.elem.style.left = this.xpos + 'px';
+      }
+      this.elem.style.left = this.xpos + 'px';
+    }
   </script>  
 </body>
 </html>
